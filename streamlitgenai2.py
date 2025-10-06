@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1d5MbQ-HNqoM6QKVYjxU1MeXpaxtfKzXH
 """
 
-!pip install streamlit
 
 import streamlit as st
 from transformers import T5Tokenizer, T5ForConditionalGeneration
