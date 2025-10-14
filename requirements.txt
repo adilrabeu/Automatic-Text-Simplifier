@@ -1,8 +1,17 @@
+# --- Core ---
 streamlit==1.39.0
-torch==2.4.0
-transformers==4.44.2
-sentencepiece==0.2.0
 protobuf==5.27.2
+altair==5.4.1
+
+# --- Transformers + Model ---
+transformers==4.44.2
+torch==2.4.0
+sentencepiece==0.2.0
+huggingface-hub==0.25.1
+safetensors==0.4.5
+
+# --- Utilities ---
 numpy==1.26.4
+pandas==2.2.3
 requests==2.32.3
 tqdm==4.66.5
