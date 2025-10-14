@@ -5,13 +5,13 @@ import torch
 # Page settings
 st.set_page_config(page_title="AI Text Simplifier", layout="wide")
 
-# Load model and tokenizer
+# Load model and tokenizer (t5-small, CPU only)
 @st.cache_resource
 def load_model():
-    model_name = "t5-base"
+    model_name = "t5-small"  # lighter model
     tokenizer = T5Tokenizer.from_pretrained(model_name)
     model = T5ForConditionalGeneration.from_pretrained(model_name)
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    device = "cpu"  # force CPU to avoid GPU issues
     model.to(device)
     return tokenizer, model, device
 
@@ -45,4 +45,4 @@ if st.button("Simplify"):
     else:
         st.warning("Please enter some text to simplify.")
 
-st.caption("Built with Hugging Face Transformers + Streamlit + PyTorch")
+st.caption("Built with Hugging Face Transformers + Streamlit + PyTorch (CPU-only)")
